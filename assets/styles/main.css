@@ -183,14 +183,16 @@ header {
     .add-todo-form .add-todo:hover .icon-plus-circle-solid {
       color: #C06C84; }
 
-.todo-list li .complete-todo, .todo-list li .delete-todo {
+.todo-list li .complete-todo, .completed-todo-list li .complete-todo, .todo-list li .delete-todo, .completed-todo-list li .delete-todo {
   position: absolute; }
 
-.todo-list {
+.todo-list, .completed-todo-list {
   width: 40%;
   min-height: 200px;
-  padding: .7rem 1.5rem; }
-  .todo-list li {
+  padding: 0.7rem 1.5rem;
+  background-color: white;
+  margin: 0 1rem; }
+  .todo-list li, .completed-todo-list li {
     width: 100%;
     padding: 0.5rem 1rem;
     font-size: 1.3rem;
@@ -198,12 +200,12 @@ header {
     border-radius: 0.5rem;
     margin-bottom: 5px;
     position: relative; }
-    .todo-list li .complete-todo {
+    .todo-list li .complete-todo, .completed-todo-list li .complete-todo {
       color: #C06C84;
       position: absolute;
       right: 40px;
       background: transparent; }
-      .todo-list li .complete-todo i {
+      .todo-list li .complete-todo i, .completed-todo-list li .complete-todo i {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -214,7 +216,7 @@ header {
             -ms-flex-pack: center;
                 justify-content: center;
         font-size: 1.3rem; }
-    .todo-list li .delete-todo {
+    .todo-list li .delete-todo, .completed-todo-list li .delete-todo {
       color: white;
       background-color: #C06C84;
       border-radius: 0.8rem;
