@@ -1,27 +1,63 @@
-.add-todo-form{
-    width: 40%;
-    display: flex;
-    align-items: center;
-    height: 100px;
-    justify-content: center;
-    .todo-input{
-        width: 65%;
-        padding: 0.6rem 1rem;
-        border-radius: $main-border-radius;
-        margin-right: 0.5rem;
+%common-input-styles {
+  padding: 0.6rem 1rem;
+  border-radius: $main-border-radius;
+  margin-right: 0.5rem;
+}
+
+%add-edit-btns {
+  border-radius: $main-border-radius;
+  padding: 0.4rem 0.7rem;
+  transition: all 5s ease;
+}
+
+%add-edit-btns-icon {
+  font-size: 1.3rem;
+}
+
+.add-todo-form {
+  @extend %common-input-styles;
+  width: 40%;
+  margin: 0 auto;
+  height: 100px;
+  .todo-input {
+    width: 65%;
+    padding: 0.6rem 1rem;
+    border-radius: $main-border-radius;
+    margin-right: 0.5rem;
+  }
+  .add-todo-btn {
+    color: $main-btn-color;
+    @extend %add-edit-btns;
+    .icon-plus-circle-solid {
+      @extend %add-edit-btns-icon;
     }
-    .add-todo{
-        border-radius: $main-border-radius;
-        padding: 0.4rem 0.7rem;
-        transition: all 5s ease;
-        .icon-plus-circle-solid{
-color: $main-btn-color;
-font-size: 1.3rem;
-        }
-    &:hover{
-        .icon-plus-circle-solid{
-            color: $main-pink;
-        }
+    &:hover {
+      .icon-plus-circle-solid {
+        color: $main-pink;
+      }
     }
+  }
+}
+
+.edit-form {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  .edit-input {
+    width: 75%;
+    @extend %common-input-styles;
+  }
+  .edit-todo-btn {
+    color: $main-pink;
+    @extend %add-edit-btns;
+    .icon-pen-solid {
+      @extend %add-edit-btns-icon;
     }
+    &:hover {
+      .icon-pen-solid {
+        color: $main-btn-color;
+      }
+    }
+  }
 }

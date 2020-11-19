@@ -1,9 +1,9 @@
 const toDoInput = document.querySelector(".todo-input");
-const addToDoBtn = document.querySelector(".add-todo");
+const addToDoBtn = document.querySelector(".add-todo-btn");
 const toDoList = document.querySelector(".todo-list");
 const editForm = document.querySelector(".edit-form");
 const editInput = document.querySelector(".edit-input");
-const editToDoBtn = document.querySelector(".edit-todo");
+const editToDoBtn = document.querySelector(".edit-todo-btn");
 const completeToDoList = document.querySelector(".completed-todo-list ");
 
 let toDos = [];
@@ -28,47 +28,42 @@ const addToDo = (id) => {
 };
 
 const addToDoListItem = (id) => {
-  // const toDoListItem = document.createElement("div");
-  // toDoListItem.className = "todo-list-item";
-  // toDoListItem.setAttribute("id", `${id}`)
   const toDoText = document.createElement("li");
   const toDoTextContent = document.createElement("span");
   toDoTextContent.textContent = toDoInput.value;
   toDoText.setAttribute("id", `${id}`);
   toDoText.setAttribute("draggable", true);
-  // toDoText.setAttribute('ondragstart', onDragStart(e));
-  // toDoText.setAttribute("class", `${isCompleted ? "completed" : ""}`)
-  // toDoText.className = className;
-  // completed btn
+
+  // complete todo button
   const completedBtn = document.createElement("button");
   completedBtn.className = "complete-todo";
   const completedBtnIcon = document.createElement("i");
   completedBtnIcon.className = "icon-check-circle-solid";
-  // completedBtn.textContent="~"
-  // delete btn
-  const deleteBtn = document.createElement("button");
-  deleteBtn.className = "delete-todo";
-  //   const deleteBtnIcon = document.createElement("i");
-  //   deleteBtnIcon.className = "icon-trash-alt-regular";
-  deleteBtn.textContent = "x";
-  deleteBtn.addEventListener("click", deleteToDoItem);
-
   completedBtn.appendChild(completedBtnIcon);
   completedBtn.addEventListener("click", completeToDoItem);
+
+  // delete todo button
+  const deleteBtn = document.createElement("button");
+  deleteBtn.className = "delete-todo";
+  deleteBtn.textContent = "x";
+  deleteBtn.addEventListener("click", deleteToDoItem);
 
   // edit form button
   editToDoBtn.addEventListener("click", (e) => {
     e.preventDefault();
     editToDo(id);
+    editForm.style.display = "none";
   });
 
+  // edit todo button
   const editBtn = document.createElement("button");
-  editBtn.textContent = "edit";
-
+  editBtn.className = "edit-todo-btn icon-pen-solid";
+  
   // opens edit form
   editBtn.addEventListener("click", (e) => {
     editToDoItem(id, toDoTextContent.textContent);
     updatedToDoId = e.target.parentNode.id;
+    console.log("updatedToDoId + "+updatedToDoId)
   });
   // toDoText.addEventListener("ondragstart", onDragStart)
   toDoText.appendChild(toDoTextContent);
@@ -149,6 +144,7 @@ const completeToDoItem = (e) => {
   // console.log("element+ " + element)
 };
 
+// edit todo
 const editToDo = (id) => {
   if (updatedToDoId == id) {
     let updatedToDo = document.getElementById(`${id}`);
@@ -158,7 +154,7 @@ const editToDo = (id) => {
 };
 
 const editToDoItem = (id, text) => {
-  editForm.style.display = "block";
+  editForm.style.display = "flex";
   editInput.focus();
   editInput.value = text;
 };

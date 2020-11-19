@@ -137,6 +137,8 @@ button, input{
         border:none;
         cursor: pointer;
 }
-.container{
+.centered{
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
