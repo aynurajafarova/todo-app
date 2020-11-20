@@ -109,7 +109,6 @@ const completeToDoItem = (e) => {
 const completeToDo = (id) => {
   toDos.forEach((todo) => {
     if (todo.id == id) todo.isCompleted = !todo.isCompleted;
-    console.log(todo);
     todo.isCompleted
       ? (document.getElementById(`${todo.id}`).className = "completed")
       : (document.getElementById(`${todo.id}`).className = "");
@@ -143,6 +142,7 @@ const dropToList = (e, list) => {
       } else if (list == completedToDoList) {
         todo.isCompleted = true;
         document.getElementById(`${todo.id}`).className = "completed";
+        // document.querySelector(".complete-todo").style.display="none";
       }
     }
   });

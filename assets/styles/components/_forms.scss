@@ -19,6 +19,9 @@
   width: 40%;
   margin: 0 auto;
   height: 100px;
+  @media (max-width: 991.98px){
+    width: 70%;
+  }
 }
 
 .add-todo-form {

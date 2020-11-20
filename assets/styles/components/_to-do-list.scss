@@ -23,6 +23,8 @@
   background-color: $main-pink;
   margin: 0 1rem;
   border-radius: $main-border-radius;
+  overflow-y: scroll;
+  height: 100%;
   li {
     width: 100%;
     padding: 0.5rem 1rem;
@@ -39,11 +41,10 @@
       right: 37px;
       i {
         font-size: 1.3rem;
-        &:hover{
+        &:hover {
           color: $main-btn-color;
         }
       }
-      
     }
     .delete-todo {
       @extend %complete-delete-edit-btns;
@@ -52,7 +53,7 @@
       font-size: 1rem;
       right: 19px;
       font-size: 1rem;
-      &:hover{
+      &:hover {
         background-color: $main-btn-color;
       }
     }
@@ -66,18 +67,33 @@
       height: 20px;
       right: 70px;
       font-size: 0.7rem;
-      &:hover{
+      &:hover {
         background-color: $main-btn-color;
       }
     }
   }
 }
 
-// .completed-todo-list{
-//   background-color: $main-pink;
-// }
-
 .completed {
   text-decoration: line-through;
   color: $main-text-color;
+}
+.todos {
+  height: 20rem;
+  overflow: hidden;
+  @media (max-width: 576px) {
+    display: block;
+  }
+}
+
+.todo-list {
+  @media (max-width: 576px) {
+    width: 80%;
+    margin: 0 auto 1.5rem;
+  }
+}
+.completed-todo-list{
+  @media (max-width: 576px){
+    display: none;
+  }
 }

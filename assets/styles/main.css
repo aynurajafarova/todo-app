@@ -180,6 +180,9 @@ header {
   width: 40%;
   margin: 0 auto;
   height: 100px; }
+  @media (max-width: 991.98px) {
+    .add-todo-form, .edit-form {
+      width: 70%; } }
 
 .add-todo-form .todo-input {
   width: 65%;
@@ -237,7 +240,9 @@ header {
   padding: 0.7rem 1.5rem;
   background-color: #C06C84;
   margin: 0 1rem;
-  border-radius: 0.5rem; }
+  border-radius: 0.5rem;
+  overflow-y: scroll;
+  height: 100%; }
   .todo-list li,
   .completed-todo-list li {
     width: 100%;
@@ -283,5 +288,21 @@ header {
 .completed {
   text-decoration: line-through;
   color: #355C7D; }
+
+.todos {
+  height: 20rem;
+  overflow: hidden; }
+  @media (max-width: 576px) {
+    .todos {
+      display: block; } }
+
+@media (max-width: 576px) {
+  .todo-list {
+    width: 80%;
+    margin: 0 auto 1.5rem; } }
+
+@media (max-width: 576px) {
+  .completed-todo-list {
+    display: none; } }
 
 /*# sourceMappingURL=main.css.map */
