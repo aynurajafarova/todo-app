@@ -39,7 +39,11 @@
       right: 37px;
       i {
         font-size: 1.3rem;
+        &:hover{
+          color: $main-btn-color;
+        }
       }
+      
     }
     .delete-todo {
       @extend %complete-delete-edit-btns;
@@ -48,6 +52,9 @@
       font-size: 1rem;
       right: 19px;
       font-size: 1rem;
+      &:hover{
+        background-color: $main-btn-color;
+      }
     }
     .edit-todo-btn {
       @extend %complete-delete-edit-btns;
@@ -59,6 +66,9 @@
       height: 20px;
       right: 70px;
       font-size: 0.7rem;
+      &:hover{
+        background-color: $main-btn-color;
+      }
     }
   }
 }

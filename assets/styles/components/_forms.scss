@@ -5,6 +5,7 @@
 }
 
 %add-edit-btns {
+  color: $main-btn-color;
   border-radius: $main-border-radius;
   padding: 0.4rem 0.7rem;
   transition: all 5s ease;
@@ -14,11 +15,15 @@
   font-size: 1.3rem;
 }
 
-.add-todo-form {
-  @extend %common-input-styles;
+%common-form-styles {
   width: 40%;
   margin: 0 auto;
   height: 100px;
+}
+
+.add-todo-form {
+  @extend %common-input-styles;
+  @extend %common-form-styles;
   .todo-input {
     width: 65%;
     padding: 0.6rem 1rem;
@@ -26,7 +31,6 @@
     margin-right: 0.5rem;
   }
   .add-todo-btn {
-    color: $main-btn-color;
     @extend %add-edit-btns;
     .icon-plus-circle-solid {
       @extend %add-edit-btns-icon;
@@ -43,20 +47,23 @@
   display: none;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  @extend %common-form-styles;
+  label {
+    margin-right: 0.5rem;
+    color: white;
+  }
   .edit-input {
-    width: 75%;
+    width: 65%;
     @extend %common-input-styles;
   }
   .edit-todo-btn {
-    color: $main-pink;
     @extend %add-edit-btns;
     .icon-pen-solid {
       @extend %add-edit-btns-icon;
     }
     &:hover {
       .icon-pen-solid {
-        color: $main-btn-color;
+        color: $main-pink;
       }
     }
   }

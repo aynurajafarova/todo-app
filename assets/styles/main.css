@@ -167,6 +167,7 @@ header {
   margin-right: 0.5rem; }
 
 .add-todo-form .add-todo-btn, .edit-form .edit-todo-btn {
+  color: #6C5B7B;
   border-radius: 0.5rem;
   padding: 0.4rem 0.7rem;
   -webkit-transition: all 5s ease;
@@ -175,19 +176,18 @@ header {
 .add-todo-form .add-todo-btn .icon-plus-circle-solid, .edit-form .edit-todo-btn .icon-pen-solid {
   font-size: 1.3rem; }
 
-.add-todo-form {
+.add-todo-form, .edit-form {
   width: 40%;
   margin: 0 auto;
   height: 100px; }
-  .add-todo-form .todo-input {
-    width: 65%;
-    padding: 0.6rem 1rem;
-    border-radius: 0.5rem;
-    margin-right: 0.5rem; }
-  .add-todo-form .add-todo-btn {
-    color: #6C5B7B; }
-    .add-todo-form .add-todo-btn:hover .icon-plus-circle-solid {
-      color: #C06C84; }
+
+.add-todo-form .todo-input {
+  width: 65%;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  margin-right: 0.5rem; }
+.add-todo-form .add-todo-btn:hover .icon-plus-circle-solid {
+  color: #C06C84; }
 
 .edit-form {
   display: none;
@@ -196,14 +196,14 @@ header {
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
-  height: 100px; }
+          align-items: center; }
+  .edit-form label {
+    margin-right: 0.5rem;
+    color: white; }
   .edit-form .edit-input {
-    width: 75%; }
-  .edit-form .edit-todo-btn {
+    width: 65%; }
+  .edit-form .edit-todo-btn:hover .icon-pen-solid {
     color: #C06C84; }
-    .edit-form .edit-todo-btn:hover .icon-pen-solid {
-      color: #6C5B7B; }
 
 .todo-list li .complete-todo,
 .completed-todo-list li .complete-todo, .todo-list li .delete-todo,
@@ -255,12 +255,18 @@ header {
       .todo-list li .complete-todo i,
       .completed-todo-list li .complete-todo i {
         font-size: 1.3rem; }
+        .todo-list li .complete-todo i:hover,
+        .completed-todo-list li .complete-todo i:hover {
+          color: #6C5B7B; }
     .todo-list li .delete-todo,
     .completed-todo-list li .delete-todo {
       border-radius: 0.8rem;
       font-size: 1rem;
       right: 19px;
       font-size: 1rem; }
+      .todo-list li .delete-todo:hover,
+      .completed-todo-list li .delete-todo:hover {
+        background-color: #6C5B7B; }
     .todo-list li .edit-todo-btn,
     .completed-todo-list li .edit-todo-btn {
       border-radius: 50%;
@@ -270,6 +276,9 @@ header {
       height: 20px;
       right: 70px;
       font-size: 0.7rem; }
+      .todo-list li .edit-todo-btn:hover,
+      .completed-todo-list li .edit-todo-btn:hover {
+        background-color: #6C5B7B; }
 
 .completed {
   text-decoration: line-through;
