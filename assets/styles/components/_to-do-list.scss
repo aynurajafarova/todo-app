@@ -25,6 +25,9 @@
   border-radius: $main-border-radius;
   overflow-y: scroll;
   height: 100%;
+  h3{
+    padding: 1rem;
+  }
   li {
     width: 100%;
     padding: 0.5rem 1rem;
@@ -82,6 +85,7 @@
   height: 20rem;
   overflow: hidden;
   @media (max-width: 576px) {
+    height: auto;
     display: block;
   }
 }
@@ -90,10 +94,13 @@
   @media (max-width: 576px) {
     width: 80%;
     margin: 0 auto 1.5rem;
+    height: 10rem;
   }
 }
 .completed-todo-list{
   @media (max-width: 576px){
-    display: none;
+    width: 80%;
+    margin: 0 auto 1.5rem;
+    height: 10rem;
   }
 }

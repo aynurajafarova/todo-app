@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
-    <link rel="stylesheet" href="./assets/icons/style.css" />
-    <link rel="stylesheet" href="./assets/styles/main.css" />
-    <title>Todo App</title>
-  </head>
-  <body>
-    <header>
-      <h2>Todo App</h2>
-    </header>
-    <form class="add-todo-form centered">
-      <input type="text" class="todo-input" placeholder="add new todo..." />
-      <button class="add-todo-btn">
-        <i class="icon-plus-circle-solid"></i>
-      </button>
-    </form>
-    <form class="edit-form centered">
-      <label>Edit: </label>
-      <input type="text" class="edit-input" />
-      <button class="edit-todo-btn"><i class="icon-pen-solid"></i></button>
-    </form>
-    <div class="todos centered">
-      <ul class="todo-list"></ul>
-      <ul class="completed-todo-list"></ul>
-    </div>
-    <script src="./assets/js/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+  <link rel="stylesheet" href="./assets/icons/style.css" />
+  <link rel="stylesheet" href="./assets/styles/main.css" />
+  <title>Todo App</title>
+</head>
+
+<body>
+  <header>
+    <h2>Todo App</h2>
+  </header>
+  <form class="add-todo-form centered">
+    <input type="text" class="todo-input" placeholder="add new todo..." />
+    <button class="add-todo-btn">
+      <i class="icon-plus-circle-solid"></i>
+    </button>
+  </form>
+  <form class="edit-form centered">
+    <label>Edit: </label>
+    <input type="text" class="edit-input" />
+    <button class="edit-todo-btn"><i class="icon-pen-solid"></i></button>
+  </form>
+  <div class="todos centered">
+    <ul class="todo-list">
+      <h3>Uncompleted:  </h3>
+    </ul>
+    <ul class="completed-todo-list">
+      <h3>Completed: </h3>
+    </ul>
+  </div>
+  <script src="./assets/js/main.js"></script>
+</body>
+
 </html>

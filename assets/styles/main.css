@@ -243,6 +243,9 @@ header {
   border-radius: 0.5rem;
   overflow-y: scroll;
   height: 100%; }
+  .todo-list h3,
+  .completed-todo-list h3 {
+    padding: 1rem; }
   .todo-list li,
   .completed-todo-list li {
     width: 100%;
@@ -294,15 +297,19 @@ header {
   overflow: hidden; }
   @media (max-width: 576px) {
     .todos {
+      height: auto;
       display: block; } }
 
 @media (max-width: 576px) {
   .todo-list {
     width: 80%;
-    margin: 0 auto 1.5rem; } }
+    margin: 0 auto 1.5rem;
+    height: 10rem; } }
 
 @media (max-width: 576px) {
   .completed-todo-list {
-    display: none; } }
+    width: 80%;
+    margin: 0 auto 1.5rem;
+    height: 10rem; } }
 
 /*# sourceMappingURL=main.css.map */

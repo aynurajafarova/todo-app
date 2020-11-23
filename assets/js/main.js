@@ -71,9 +71,9 @@ const addToDoListItem = (id, isCompleted) => {
   toDoText.appendChild(deleteBtn);
 
   toDoInput.value.length > 0 && toDoList.appendChild(toDoText);
-}; 
+};
 
-const submitForm = (e) => {
+const addtoDoSubmitForm = (e) => {
   e.preventDefault();
   let id = generateRandomId();
   addToDo(id);
@@ -82,7 +82,7 @@ const submitForm = (e) => {
   toDoInput.value = ""; // clear input value
 };
 
-addToDoBtn.addEventListener("click", submitForm);
+addToDoBtn.addEventListener("click", addtoDoSubmitForm);
 
 // remove from toDos array
 const deleteToDo = (id) => {
@@ -109,9 +109,14 @@ const completeToDoItem = (e) => {
 const completeToDo = (id) => {
   toDos.forEach((todo) => {
     if (todo.id == id) todo.isCompleted = !todo.isCompleted;
-    todo.isCompleted
-      ? (document.getElementById(`${todo.id}`).className = "completed")
-      : (document.getElementById(`${todo.id}`).className = "");
+    let toDoListItem = document.getElementById(`${todo.id}`);
+    if (todo.isCompleted) {
+      toDoListItem.className = "completed";
+      completedToDoList.appendChild(toDoListItem)
+    } else {
+      toDoListItem.className = "";
+      toDoList.appendChild(toDoListItem)
+    }
   });
 };
 
@@ -136,13 +141,13 @@ const dropToList = (e, list) => {
 
   toDos.forEach((todo) => {
     if (todo.id === id) {
+      let toDoListItem = document.getElementById(`${todo.id}`);
       if (list == toDoList) {
         todo.isCompleted = false;
-        document.getElementById(`${todo.id}`).className = "";
+        toDoListItem.className = "";
       } else if (list == completedToDoList) {
         todo.isCompleted = true;
-        document.getElementById(`${todo.id}`).className = "completed";
-        // document.querySelector(".complete-todo").style.display="none";
+        toDoListItem.className = "completed";
       }
     }
   });
